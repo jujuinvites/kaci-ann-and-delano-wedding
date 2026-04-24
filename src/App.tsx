@@ -175,31 +175,31 @@ const defaultContent = {
 };
 
 const defaultTheme = {
-  heroBg1: '#b8cfe2',
-  heroBg2: '#d6e8f4',
+  heroBg1: '#c5d9e8',
+  heroBg2: '#ddeaf4',
   cream: '#FAF8F4',
   pageBg: '#FAF8F4',
-  dustyBlue: '#6b8fa8',
-  navBg: '#dce8f0',
-  footerBg: '#2d3a4a',
-  footerText: '#c8d8e8',
+  dustyBlue: '#4a7a9b',
+  navBg: '#eaf2f8',
+  footerBg: '#1e2d3c',
+  footerText: '#d4e5f0',
   cardBg: '#ffffff',
-  beigeBg: '#EDE7E2',
+  beigeBg: '#F0EBE5',
   scriptFont: 'Great Vibes',
-  titleFont: 'Playfair Display',
+  titleFont: 'Cormorant Garamond',
   bodyFont: 'Raleway',
-  heroNameSize: 76,
-  heroSubSize: 20,
-  sectionTitleSize: 54,
+  heroNameSize: 88,
+  heroSubSize: 22,
+  sectionTitleSize: 58,
   heroAlign: 'center',
   showFloral: true,
-  floralHeight: 220,
+  floralHeight: 230,
   heroImage: '',
   logoImage: '',
   nameImage: '',
   heroBgImage: '',
   footerBgImage: '',
-  cardShadow: '0 4px 20px rgba(80,110,140,0.10)',
+  cardShadow: '0 8px 32px rgba(50,90,120,0.10)',
 };
 
 const ld = (k, f) => {
@@ -229,10 +229,10 @@ const rf = (t) => "'" + t.bodyFont + "',sans-serif";
 
 const SCRIPT_FONTS = [
   'Great Vibes',
+  'Pinyon Script',
   'Dancing Script',
   'Pacifico',
   'Satisfy',
-  'Pinyon Script',
 ];
 const TITLE_FONTS = [
   'Playfair Display',
@@ -244,7 +244,7 @@ const TITLE_FONTS = [
 const BODY_FONTS = ['Raleway', 'Lato', 'Nunito', 'Josefin Sans', 'Montserrat'];
 
 const FONTS =
-  "@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Pacifico&family=Satisfy&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600&family=Lato:wght@300;400;700&family=Nunito:wght@300;400;600&family=Josefin+Sans:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap');";
+  "@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Dancing+Script:wght@400;700&family=Pacifico&family=Satisfy&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600&family=Lato:wght@300;400;700&family=Nunito:wght@300;400;600&family=Josefin+Sans:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap');";
 
 /* ── SVG FLORAL ── */
 function SvgFloral({ theme }) {
@@ -428,29 +428,16 @@ function RingDivider({ theme, light }) {
       style={{
         display: 'flex',
         alignItems: 'center',
-        gap: 14,
-        margin: '18px auto',
-        maxWidth: 260,
+        gap: 16,
+        margin: '22px auto',
+        maxWidth: 300,
       }}
     >
       <div style={{ flex: 1, height: 1, background: grad[0] }} />
-      <svg width="30" height="18" viewBox="0 0 30 18" fill="none">
-        <circle
-          cx="9"
-          cy="9"
-          r="7"
-          stroke={c}
-          strokeWidth="1.3"
-          opacity="0.7"
-        />
-        <circle
-          cx="21"
-          cy="9"
-          r="7"
-          stroke={c}
-          strokeWidth="1.3"
-          opacity="0.7"
-        />
+      <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
+        <circle cx="11" cy="10" r="7.5" stroke={c} strokeWidth="1.2" opacity="0.65" />
+        <circle cx="29" cy="10" r="7.5" stroke={c} strokeWidth="1.2" opacity="0.65" />
+        <line x1="18" y1="10" x2="22" y2="10" stroke={c} strokeWidth="1" opacity="0.45" />
       </svg>
       <div style={{ flex: 1, height: 1, background: grad[1] }} />
     </div>
@@ -466,7 +453,7 @@ function Footer({ theme, content }) {
         background: hasBgImg
           ? 'url(' + theme.footerBgImage + ') center center / cover no-repeat'
           : theme.footerBg,
-        padding: '100px 24px 48px',
+        padding: '80px 24px 56px',
         textAlign: 'center',
         position: 'relative',
       }}
@@ -477,31 +464,45 @@ function Footer({ theme, content }) {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(to bottom, rgba(30,45,58,0.1), rgba(30,45,58,0.3))',
+              'linear-gradient(to bottom, rgba(20,32,44,0.15), rgba(20,32,44,0.45))',
             pointerEvents: 'none',
           }}
         />
       ) : null}
       <div style={{ position: 'relative', zIndex: 1 }}>
+        {/* Delicate divider above name */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 14,
+          maxWidth: 240,
+          margin: '0 auto 28px',
+        }}>
+          <div style={{ flex: 1, height: 1, background: (theme.footerText + '30') }} />
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="3" stroke={theme.footerText} strokeWidth="1" opacity="0.45"/>
+          </svg>
+          <div style={{ flex: 1, height: 1, background: (theme.footerText + '30') }} />
+        </div>
         <p
           style={{
             fontFamily: gf(theme),
-            fontSize: 'clamp(36px,9vw,50px)',
+            fontSize: 'clamp(36px,9vw,54px)',
             color: theme.footerText,
-            marginBottom: 12,
-            lineHeight: 1.1,
+            marginBottom: 16,
+            lineHeight: 1.05,
           }}
         >
           {content.footerNames}
         </p>
-
         <p
           style={{
             fontFamily: rf(theme),
-            fontSize: 13,
-            color: theme.footerText + '80',
-            letterSpacing: '0.1em',
+            fontSize: 11,
+            color: theme.footerText + '70',
+            letterSpacing: '0.32em',
             fontWeight: 300,
+            textTransform: 'uppercase',
           }}
         >
           {content.footerDate} · {content.footerVenue}
@@ -511,9 +512,10 @@ function Footer({ theme, content }) {
             style={{
               fontFamily: pf(theme),
               fontSize: 14,
-              color: theme.footerText + '60',
+              color: theme.footerText + '55',
               fontStyle: 'italic',
-              marginTop: 10,
+              marginTop: 14,
+              letterSpacing: '0.04em',
             }}
           >
             {content.footerNote}
@@ -842,10 +844,10 @@ function HomePage({ guests, setPage, theme, content }) {
               theme.heroBg1 +
               ' 0%,' +
               theme.heroBg2 +
-              ' 50%,' +
+              ' 55%,' +
               (theme.pageBg || theme.cream) +
               ' 100%)',
-          paddingTop: 100,
+          paddingTop: 120,
           textAlign: theme.heroAlign,
           overflow: 'hidden',
           position: 'relative',
@@ -895,13 +897,13 @@ function HomePage({ guests, setPage, theme, content }) {
           <p
             style={{
               fontFamily: rf(theme),
-              fontSize: 'clamp(12px,3vw,15px)',
-              letterSpacing: '0.38em',
+              fontSize: 'clamp(10px,2.5vw,12px)',
+              letterSpacing: '0.5em',
               color: theme.dustyBlue,
               textTransform: 'uppercase',
-              marginBottom: 22,
-              fontWeight: 600,
-              opacity: 0.85,
+              marginBottom: 28,
+              fontWeight: 500,
+              opacity: 0.75,
             }}
           >
             {content.heroSuper}
@@ -924,14 +926,15 @@ function HomePage({ guests, setPage, theme, content }) {
               style={{
                 fontFamily: gf(theme),
                 fontSize:
-                  'clamp(52px,' +
+                  'clamp(60px,' +
                   theme.heroNameSize +
                   'px,' +
                   theme.heroNameSize +
                   'px)',
                 color: theme.dustyBlue,
-                lineHeight: 1.08,
-                marginBottom: 20,
+                lineHeight: 1.05,
+                marginBottom: 24,
+                textShadow: '0 2px 24px rgba(74,122,155,0.10)',
               }}
             >
               {content.coupleName}
@@ -942,31 +945,32 @@ function HomePage({ guests, setPage, theme, content }) {
             style={{
               fontFamily: pf(theme),
               fontSize:
-                'clamp(18px,' +
+                'clamp(16px,' +
                 theme.heroSubSize +
                 'px,' +
                 (theme.heroSubSize + 4) +
                 'px)',
               color: '#3d4f5e',
-              letterSpacing: '0.12em',
-              marginBottom: 10,
+              letterSpacing: '0.22em',
+              marginBottom: 8,
               fontWeight: 600,
+              fontStyle: 'italic',
             }}
           >
             {content.weddingDate}
           </p>
-          <div style={{ marginBottom: 30, paddingBottom: 2 }}>
+          <div style={{ marginBottom: 36, paddingBottom: 2 }}>
             {venueParts.map(function (line, i) {
               return (
                 <p
                   key={i}
                   style={{
                     fontFamily: pf(theme),
-                    fontSize: 'clamp(13px,3vw,16px)',
+                    fontSize: 'clamp(13px,3vw,15px)',
                     color: '#7a8e9a',
                     fontStyle: 'italic',
-                    lineHeight:1.5,
-                    letterSpacing: '0em',
+                    lineHeight: 1.6,
+                    letterSpacing: '0.04em',
                   }}
                 >
                   {line}
@@ -977,13 +981,14 @@ function HomePage({ guests, setPage, theme, content }) {
           <p
             style={{
               fontFamily: rf(theme),
-              fontSize: 'clamp(14px,3.8vw,17px)',
+              fontSize: 'clamp(14px,3.5vw,16px)',
               color: '#4e5e6a',
-              maxWidth: 400,
+              maxWidth: 380,
               margin: theme.heroAlign === 'center' ? '0 auto' : '0',
-              lineHeight: 1.8,
+              lineHeight: 2,
               fontWeight: 300,
               padding: '0 4px',
+              letterSpacing: '0.02em',
             }}
           >
             {content.welcomeMsg}
@@ -1011,17 +1016,30 @@ function HomePage({ guests, setPage, theme, content }) {
       {/* FIND YOUR SEAT — gradient bridge from hero */}
       <div
         style={{
-          background: 'linear-gradient(to bottom,#eaf1f7 0%,#ffffff 18%)',
-          padding: '64px 24px 60px',
+          background: 'linear-gradient(to bottom,#e8f2f9 0%,#f5f9fd 30%,#fafaf8 100%)',
+          padding: '72px 24px 72px',
           textAlign: 'center',
         }}
       >
+        <p style={{
+          fontFamily: rf(theme),
+          fontSize: 10,
+          letterSpacing: '0.5em',
+          color: theme.dustyBlue,
+          textTransform: 'uppercase',
+          marginBottom: 14,
+          fontWeight: 500,
+          opacity: 0.6,
+        }}>
+          — YOUR PLACE —
+        </p>
         <h2
           style={{
             fontFamily: gf(theme),
             fontSize: theme.sectionTitleSize,
             color: theme.dustyBlue,
-            marginBottom: 10,
+            marginBottom: 6,
+            lineHeight: 1,
           }}
         >
           Find Your Seat
@@ -1033,18 +1051,20 @@ function HomePage({ guests, setPage, theme, content }) {
             letterSpacing: '0.28em',
             color: '#9aacb8',
             textTransform: 'uppercase',
-            marginBottom: 38,
-            fontWeight: 600,
+            marginBottom: 48,
+            fontWeight: 400,
           }}
         >
-          SEARCH BY YOUR NAME BELOW
+          search by your name below
         </p>
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 16,
+            gap: 14,
+            maxWidth: 520,
+            margin: '0 auto',
           }}
         >
           <input
@@ -1056,85 +1076,108 @@ function HomePage({ guests, setPage, theme, content }) {
             onKeyDown={function (e) {
               if (e.key === 'Enter') doSearch();
             }}
-            placeholder="Enter your name..."
+            placeholder="Enter your name…"
             style={{
-              width: 'min(88%,560px)',
-              height: 62,
+              width: '100%',
+              height: 64,
               borderRadius: 50,
-              background: theme.beigeBg,
-              border: '2px solid ' + theme.dustyBlue + '48',
+              background: '#fff',
+              border: '1.5px solid ' + theme.dustyBlue + '38',
               fontFamily: pf(theme),
               fontSize: 16,
               color: '#3a3530',
               textAlign: 'center',
               outline: 'none',
-              paddingInline: 28,
+              paddingInline: 32,
+              boxShadow: '0 4px 24px rgba(50,90,120,0.07)',
+              letterSpacing: '0.02em',
             }}
           />
           <button
             onClick={doSearch}
             style={{
-              height: 56,
-              width: 'min(82%,300px)',
+              height: 54,
+              width: '100%',
               borderRadius: 50,
-              background:
-                'linear-gradient(135deg,' +
-                theme.dustyBlue +
-                'ee,' +
-                theme.dustyBlue +
-                'bb)',
+              background: theme.dustyBlue,
               border: 'none',
               color: '#fff',
               fontFamily: rf(theme),
-              fontSize: 13,
+              fontSize: 11,
               fontWeight: 600,
-              letterSpacing: '0.2em',
+              letterSpacing: '0.32em',
               cursor: 'pointer',
-              boxShadow: '0 8px 24px ' + theme.dustyBlue + '38',
-              transition: 'all 0.2s',
+              boxShadow: '0 8px 28px ' + theme.dustyBlue + '40',
+              transition: 'all 0.25s',
             }}
             onMouseEnter={function (e) {
-              e.currentTarget.style.filter = 'brightness(0.91)';
+              e.currentTarget.style.filter = 'brightness(0.88)';
+              e.currentTarget.style.transform = 'translateY(-1px)';
             }}
             onMouseLeave={function (e) {
               e.currentTarget.style.filter = 'none';
+              e.currentTarget.style.transform = 'none';
             }}
           >
             FIND MY SEAT
           </button>
         </div>
         {searched && (
-          <div style={{ marginTop: 28, animation: 'fadeUp 0.4s ease both' }}>
+          <div style={{ marginTop: 36, animation: 'fadeUp 0.5s ease both' }}>
             {result ? (
-              <div>
+              <div
+                style={{
+                  display: 'inline-block',
+                  background: '#fff',
+                  border: '1px solid ' + theme.dustyBlue + '28',
+                  borderRadius: 24,
+                  padding: '32px 48px',
+                  boxShadow: '0 8px 32px rgba(50,90,120,0.10)',
+                  animation: 'fadeUp 0.5s ease both',
+                }}
+              >
                 <p
                   style={{
                     fontFamily: rf(theme),
-                    fontSize: 11,
+                    fontSize: 10,
                     color: '#9aacb8',
-                    letterSpacing: '0.15em',
+                    letterSpacing: '0.4em',
+                    marginBottom: 12,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  you are seated at
+                </p>
+                <p
+                  style={{
+                    fontFamily: gf(theme),
+                    fontSize: 46,
+                    color: theme.dustyBlue,
+                    lineHeight: 1,
                     marginBottom: 8,
                   }}
                 >
-                  YOU ARE SEATED AT
+                  {'Table ' + result.table}
                 </p>
+                {result.seat ? (
+                  <p style={{
+                    fontFamily: pf(theme),
+                    fontSize: 15,
+                    color: '#7a8e9a',
+                    letterSpacing: '0.12em',
+                    marginBottom: 10,
+                    fontStyle: 'italic',
+                  }}>
+                    {'Seat ' + result.seat}
+                  </p>
+                ) : null}
+                <div style={{ width: 40, height: 1, background: theme.dustyBlue + '40', margin: '0 auto 12px' }} />
                 <p
                   style={{
                     fontFamily: pf(theme),
-                    fontSize: 28,
-                    color: theme.dustyBlue,
-                    fontWeight: 600,
-                  }}
-                >
-                  Table {result.table}
-                  {result.seat ? ' · Seat ' + result.seat : ''}
-                </p>
-                <p
-                  style={{
-                    fontFamily: rf(theme),
                     fontSize: 14,
                     color: '#9aacb8',
-                    marginTop: 6,
+                    letterSpacing: '0.04em',
                   }}
                 >
                   {result.name}
@@ -1149,11 +1192,10 @@ function HomePage({ guests, setPage, theme, content }) {
                   fontSize: 15,
                   maxWidth: 320,
                   margin: '0 auto',
-                  lineHeight: 1.8,
+                  lineHeight: 1.9,
                 }}
               >
-                We couldn't find your name. Please check the spelling or visit
-                the welcome desk.
+                {"We couldn't find your name. Please check the spelling or visit the welcome desk."}
               </p>
             )}
           </div>
@@ -1163,18 +1205,30 @@ function HomePage({ guests, setPage, theme, content }) {
       {/* EXPLORE THE DAY — gradient bridge from white */}
       <div
         style={{
-          background:
-            'linear-gradient(to bottom,#f0f5f9 0%,' + theme.navBg + ' 20%)',
-          padding: '52px 20px 52px',
+          background: theme.navBg,
+          padding: '72px 24px 80px',
           textAlign: 'center',
         }}
       >
+        <p style={{
+          fontFamily: rf(theme),
+          fontSize: 10,
+          letterSpacing: '0.5em',
+          color: theme.dustyBlue,
+          textTransform: 'uppercase',
+          marginBottom: 14,
+          fontWeight: 500,
+          opacity: 0.6,
+        }}>
+          — NAVIGATE —
+        </p>
         <h2
           style={{
             fontFamily: gf(theme),
-            fontSize: Math.round(theme.sectionTitleSize * 0.82),
+            fontSize: Math.round(theme.sectionTitleSize * 0.85),
             color: theme.dustyBlue,
-            marginBottom: 8,
+            marginBottom: 6,
+            lineHeight: 1,
           }}
         >
           Explore the Day
@@ -1186,18 +1240,18 @@ function HomePage({ guests, setPage, theme, content }) {
             letterSpacing: '0.28em',
             color: '#8a9aaa',
             textTransform: 'uppercase',
-            marginBottom: 36,
-            fontWeight: 600,
+            marginBottom: 48,
+            fontWeight: 400,
           }}
         >
-          TAP TO NAVIGATE
+          tap to discover each moment
         </p>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-            gap: 14,
-            maxWidth: 560,
+            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+            gap: 16,
+            maxWidth: 580,
             margin: '0 auto',
           }}
         >
@@ -1209,47 +1263,59 @@ function HomePage({ guests, setPage, theme, content }) {
                   setPage(card.p);
                 }}
                 style={{
-                  background: theme.cardBg,
-                  border: 'none',
-                  borderRadius: 18,
-                  padding: '28px 14px 22px',
+                  background: '#fff',
+                  border: '1px solid ' + theme.dustyBlue + '18',
+                  borderRadius: 22,
+                  padding: '32px 16px 26px',
                   cursor: 'pointer',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: 12,
-                  boxShadow: theme.cardShadow,
-                  transition: 'transform 0.2s,box-shadow 0.2s',
+                  gap: 14,
+                  boxShadow: '0 4px 20px rgba(50,90,120,0.07)',
+                  transition: 'transform 0.25s, box-shadow 0.25s',
                 }}
                 onMouseEnter={function (e) {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
                   e.currentTarget.style.boxShadow =
-                    '0 8px 26px rgba(80,110,140,0.16)';
+                    '0 16px 40px rgba(50,90,120,0.14)';
                 }}
                 onMouseLeave={function (e) {
                   e.currentTarget.style.transform = 'none';
                   e.currentTarget.style.boxShadow =
-                    '0 2px 14px rgba(80,110,140,0.09)';
+                    '0 4px 20px rgba(50,90,120,0.07)';
                 }}
               >
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke={theme.dustyBlue}
-                  strokeWidth="1.3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d={card.d} />
-                </svg>
+                <div style={{
+                  width: 52,
+                  height: 52,
+                  borderRadius: '50%',
+                  background: theme.dustyBlue + '10',
+                  border: '1px solid ' + theme.dustyBlue + '25',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={theme.dustyBlue}
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d={card.d} />
+                  </svg>
+                </div>
                 <span
                   style={{
                     fontFamily: pf(theme),
-                    fontSize: 15,
+                    fontSize: 14,
                     color: '#3a3530',
-                    lineHeight: 1.3,
+                    lineHeight: 1.4,
+                    letterSpacing: '0.01em',
                   }}
                 >
                   {card.l}
@@ -1276,13 +1342,23 @@ function PW({ title, theme, content, children }) {
             theme.heroBg1 +
             ' 0%,' +
             theme.heroBg2 +
-            ' 45%,' +
+            ' 55%,' +
             (theme.pageBg || theme.cream) +
             ' 100%)',
-          padding: '92px 24px 36px',
+          padding: '104px 24px 44px',
           textAlign: 'center',
         }}
       >
+        <p style={{
+          fontFamily: rf(theme),
+          fontSize: 10,
+          letterSpacing: '0.5em',
+          color: theme.dustyBlue,
+          textTransform: 'uppercase',
+          marginBottom: 14,
+          opacity: 0.55,
+          fontWeight: 500,
+        }}>Kaci-Ann &amp; Delano</p>
         <h1
           style={{
             fontFamily: gf(theme),
@@ -1295,7 +1371,7 @@ function PW({ title, theme, content, children }) {
         </h1>
         <RingDivider theme={theme} />
       </div>
-      <div style={{ padding: '0 20px 48px', maxWidth: 600, margin: '0 auto' }}>
+      <div style={{ padding: '0 20px 56px', maxWidth: 600, margin: '0 auto' }}>
         {children}
       </div>
       {/* Gradient bridge into footer */}
@@ -1303,7 +1379,7 @@ function PW({ title, theme, content, children }) {
         style={{
           height: 60,
           background:
-            'linear-gradient(to bottom,' + theme.cream + ' 0%,#e8eff5 100%)',
+            'linear-gradient(to bottom,' + (theme.pageBg || theme.cream) + ' 0%,#dde9f2 100%)',
         }}
       />
       <Footer theme={theme} content={content} />
@@ -4120,9 +4196,9 @@ export default function App() {
         {FONTS +
           '* { box-sizing:border-box; margin:0; padding:0; } html,body { background:' +
           theme.cream +
-          '; overflow-x:hidden; } @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } } @keyframes fadeIn { from { opacity:0; } to { opacity:1; } } ::selection { background:' +
+          '; overflow-x:hidden; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; } input,button,textarea,select { font-synthesis:none; } @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } } @keyframes fadeIn { from { opacity:0; } to { opacity:1; } } ::selection { background:' +
           theme.dustyBlue +
-          '28; }'}
+          '28; } input::placeholder { opacity:0.55; } textarea::placeholder { opacity:0.55; }'}
       </style>
       <Header
         onMenu={function () {
